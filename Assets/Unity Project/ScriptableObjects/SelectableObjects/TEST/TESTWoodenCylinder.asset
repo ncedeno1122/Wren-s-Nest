@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e08d11fe15fe54aaddcee20bb9b76e, type: 3}
+  m_Name: TESTWoodenCylinder
+  m_EditorClassIdentifier: 
+  ObjectName: Wooden Cylinder
+  ObjectDescription: This might be something you find on the wall, or something like
+    that. Again, just for a proof of concept.
+  ResourceURL: https://en.wikipedia.org/wiki/Papaya
+  CameraPositionalOffset: {x: -1, y: -1, z: -2}
+  CameraRotationalOffset: {x: -25, y: 0, z: 0}
