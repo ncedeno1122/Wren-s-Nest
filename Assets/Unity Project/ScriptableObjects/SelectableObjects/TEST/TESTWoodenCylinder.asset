@@ -16,5 +16,5 @@ MonoBehaviour:
   ObjectDescription: This might be something you find on the wall, or something like
     that. Again, just for a proof of concept.
   ResourceURL: https://en.wikipedia.org/wiki/Papaya
-  CameraPositionalOffset: {x: -1, y: -1, z: -2}
-  CameraRotationalOffset: {x: -25, y: 0, z: 0}
+  CameraPositionalOffset: {x: -2, y: -1, z: -1}
+  CameraRotationalOffset: {x: -25, y: 90, z: 0}
