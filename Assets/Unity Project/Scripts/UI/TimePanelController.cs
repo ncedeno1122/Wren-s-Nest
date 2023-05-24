@@ -7,6 +7,7 @@ using System;
 public class TimePanelController : MonoBehaviour
 {
     private bool m_UpdatingTime = true;
+    public bool ShowPercentageOfDay = false;
     //private IEnumerator m_TimeCRT;
     private TextMeshProUGUI m_TimeText;
 
@@ -57,7 +58,10 @@ public class TimePanelController : MonoBehaviour
 
     private void OnTimeManagerTick()
     {
-        m_TimeText.text = TimeManager.Instance.CurrentDT.ToString("h:mm:ss tt") + "\n" +
-            TimeManager.Instance.CurrentDT.TimeOfDay.TotalHours;
+        m_TimeText.text = TimeManager.Instance.CurrentDT.ToString("h:mm:ss tt");
+        if (ShowPercentageOfDay)
+        {
+            m_TimeText.text += "\n(" + ((float)TimeManager.Instance.CurrentDT.TimeOfDay.TotalHours / 24f) * 100f + "%)";
+        }
     }
 }
