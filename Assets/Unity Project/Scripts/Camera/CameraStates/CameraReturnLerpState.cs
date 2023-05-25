@@ -11,7 +11,6 @@ public class CameraReturnLerpState : CameraState
     private Quaternion m_TargetRotation = Quaternion.identity;
 
     private float m_LerpTime;
-    private bool m_IsCRTFinished = false;
     public IEnumerator LerpCRT;
 
     public CameraReturnLerpState(ScriptableCameraController context, SelectableObjectController selectedObject, float lerpTime = 1.5f) : base(context)
@@ -63,7 +62,6 @@ public class CameraReturnLerpState : CameraState
 
     private IEnumerator LerpToFromCRT(Vector3 originalPos, Vector3 targetPos, Quaternion originalRot, Quaternion targetRot, float lerpTime)
     {
-        m_IsCRTFinished = false;
         for (float t = 0f; t < lerpTime; t += Time.deltaTime)
         {
             // Lerp Position & Rotation
@@ -75,7 +73,6 @@ public class CameraReturnLerpState : CameraState
         }
         m_Context.transform.SetPositionAndRotation(targetPos, targetRot);
 
-        m_IsCRTFinished = true;
 
         //Debug.Log("Done!");
         m_Context.ChangeState(new CameraPlayerState(m_Context));

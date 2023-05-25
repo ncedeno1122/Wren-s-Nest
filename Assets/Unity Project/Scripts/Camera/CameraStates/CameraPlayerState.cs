@@ -8,13 +8,18 @@ public class CameraPlayerState : CameraState
 
     public CameraPlayerState(ScriptableCameraController context) : base(context)
     {
-        m_CurrentRotationEulers = m_Context.transform.localRotation.eulerAngles;
+        //m_CurrentRotationEulers = m_Context.transform.localRotation.eulerAngles;
+        m_CurrentRotationEulers = m_Context.transform.localEulerAngles;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public override void OnEnter()
     {
-        //Debug.Log("Entered CameraPlayerState!");
-        Cursor.lockState = CursorLockMode.Locked;
+        //Debug.Log($"Entered CameraPlayerState with Rotation (" +
+        //    $"X: {m_Context.transform.rotation.eulerAngles.x}," +
+        //    $"Y: {m_Context.transform.rotation.eulerAngles.y}," +
+        //    $"Z: {m_Context.transform.rotation.eulerAngles.z})");
+        //Debug.Log($"Also, LookInputVector is {m_LookInputVector.ToString()} and CurrentRotationEulers is {m_CurrentRotationEulers.ToString()}");
     }
 
     public override void OnExit()
@@ -25,7 +30,14 @@ public class CameraPlayerState : CameraState
     public override void HandleSelectInput()
     {
         // Switch state to SelectionState!
-        m_Context.ChangeState(new CameraSelectionState(m_Context));
+        if (m_Context.CameraSelector.TrySelectObject(out SelectableObjectController selectedObject))
+        {
+            Debug.Log($"WE GOT ONE IT\'S {selectedObject.gameObject.name}!!");
+
+            // Switch state to LerpToObjectState!
+            m_Context.ChangeState(new CameraLerpToObjectState(m_Context, m_Context.CameraSelector.SelectedObject));
+        }
+        //m_Context.ChangeState(new CameraSelectionState(m_Context));
     }
 
     protected override void PreUpdate()
@@ -37,7 +49,7 @@ public class CameraPlayerState : CameraState
     protected override void MidUpdate()
     {
         // Look
-        m_Context.transform.localEulerAngles = m_CurrentRotationEulers;
+        m_Context.transform.localRotation = Quaternion.Euler(m_CurrentRotationEulers);
     }
 
     protected override void PostUpdate()

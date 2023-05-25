@@ -75,7 +75,4 @@ public class PlayerController : MonoBehaviour
             m_PlayerCamera.HandleSelectInput();
         }
     }
-
-    // + + + + | Functions | + + + + 
-
 }
