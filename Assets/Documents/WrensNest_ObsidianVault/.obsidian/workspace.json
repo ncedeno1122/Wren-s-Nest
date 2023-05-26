@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Devlogs/2023-05-25.md",
+                "file": "2023-05-26.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Devlogs/2023-05-25.md",
+                "file": "2023-05-26.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Devlogs/2023-05-25.md",
+                "file": "2023-05-26.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Devlogs/2023-05-25.md"
+                "file": "2023-05-26.md"
               }
             }
           }
@@ -149,9 +149,11 @@
   },
   "active": "7051cff4918883bf",
   "lastOpenFiles": [
+    "2023-05-26.md.meta",
+    "Devlogs/2023-05-25.md",
+    "2023-05-26.md",
     "Devlogs/2023-05-25.md.meta",
     "Devlogs/2023-05-24.md",
-    "Devlogs/2023-05-25.md",
     "Devlogs/2023-05-21.md",
     "Devlogs/2023-05-22.md",
     "Devlogs/2023-05-23.md",
