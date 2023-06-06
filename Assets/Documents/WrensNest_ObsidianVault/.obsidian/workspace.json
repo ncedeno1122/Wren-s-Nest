@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-05-26.md",
+                "file": "Devlogs/2023-05-31.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "5a80ab8954655a2c",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-05-26.md",
+                "file": "Devlogs/2023-05-31.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-05-26.md",
+                "file": "Devlogs/2023-05-31.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-05-26.md"
+                "file": "Devlogs/2023-05-31.md"
               }
             }
           }
@@ -147,11 +146,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7051cff4918883bf",
+  "active": "89945b0671e63149",
   "lastOpenFiles": [
+    "Devlogs/2023-05-26.md",
+    "Devlogs/2023-05-31.md",
+    "Devlogs/2023-05-26.md.meta",
+    "Devlogs/2023-05-31.md.meta",
     "2023-05-26.md.meta",
     "Devlogs/2023-05-25.md",
-    "2023-05-26.md",
     "Devlogs/2023-05-25.md.meta",
     "Devlogs/2023-05-24.md",
     "Devlogs/2023-05-21.md",
@@ -163,7 +165,6 @@
     "Devlogs/2023-05-22.md.meta",
     "Devlogs/2023-05-21.md.meta",
     "Devlogs.meta",
-    "Devlogs/2023-05-09.md.meta",
-    "Devlogs"
+    "Devlogs/2023-05-09.md.meta"
   ]
 }
