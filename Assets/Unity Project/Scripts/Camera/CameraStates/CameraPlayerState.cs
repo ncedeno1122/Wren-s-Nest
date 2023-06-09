@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraPlayerState : CameraState
 {
     private Vector3 m_CurrentRotationEulers = Vector3.zero;
+    private Vector3 m_CameraOffset = new(0f, 0.65f, 0f);
 
     public CameraPlayerState(ScriptableCameraController context) : base(context)
     {
@@ -55,6 +56,6 @@ public class CameraPlayerState : CameraState
     protected override void PostUpdate()
     {
         // Move with Player
-        m_Context.transform.position = Vector3.Lerp(m_Context.transform.position, m_Context.RegisteredPlayerController.transform.position, 0.35f);
+        m_Context.transform.position = Vector3.Lerp(m_Context.transform.position, m_Context.RegisteredPlayerController.transform.position + m_CameraOffset, 0.35f);
     }
 }

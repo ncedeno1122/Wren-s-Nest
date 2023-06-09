@@ -5,8 +5,10 @@ public class PlayerController : MonoBehaviour
 {
     public const float WALKSPEED = 3f;
 
-    [SerializeField] private Vector3 m_MovementInput = Vector3.zero;
+    [SerializeField] private bool m_IsGrounded;
     [SerializeField] private Vector3 m_LookInput = Vector3.zero;
+    [SerializeField] private Vector3 m_MovementInput = Vector3.zero;
+    [SerializeField] private Vector3 m_Velocity = Vector3.zero;
 
     private CharacterController m_CC;
     private PlayerInput m_PlayerInput;
@@ -32,11 +34,16 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        // Grounded Check
+        m_IsGrounded = m_CC.isGrounded;
+
         // Move & Send Camera information.
         if (m_PlayerCamera.IsPlayerControllable)
         {
+            // Move Camera
             m_PlayerCamera.HandleLookInput(m_LookInput);
 
+            // Move CC
             if (m_MovementInput != Vector3.zero)
             {
                 Vector3 transformedMovementInput = m_PlayerCamera.transform.TransformDirection(m_MovementInput);
@@ -44,14 +51,19 @@ public class PlayerController : MonoBehaviour
                 m_CC.Move(transformedMovementInput * (WALKSPEED * Time.deltaTime));
             }
         }
+
+        // Apply Gravity if not Grounded
+        if (!m_IsGrounded)
+        {
+            m_Velocity.y -= 9.81f * Time.deltaTime;
+        }
         else
         {
-            // Move the CharacterController
-            if (m_MovementInput != Vector3.zero)
-            {
-                m_CC.Move(m_MovementInput * (WALKSPEED * Time.deltaTime));
-            }
+            m_Velocity.y = 0f;
         }
+
+        // Move CharacterController with Velocity
+        m_CC.Move(m_Velocity * Time.deltaTime);
     }
 
     // + + + + | InputActions | + + + + 
