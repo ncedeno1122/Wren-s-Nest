@@ -8,24 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7051cff4918883bf",
+            "id": "2cff3e51bf6a66f9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Devlogs/2023-06-07.md",
+                "file": "Devlogs/2023-06-09.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "2cff3e51bf6a66f9",
+            "id": "9f05ef7d79bdca75",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Devlogs/2023-06-06.md",
+                "file": "'Snowglobes' & Contents.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Devlogs/2023-06-07.md",
+                "file": "Devlogs/2023-06-09.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Devlogs/2023-06-07.md",
+                "file": "Devlogs/2023-06-09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Devlogs/2023-06-07.md"
+                "file": "Devlogs/2023-06-09.md"
               }
             }
           }
@@ -158,13 +158,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7051cff4918883bf",
+  "active": "2cff3e51bf6a66f9",
   "lastOpenFiles": [
-    "Devlogs/2023-06-07.md.meta",
-    "Devlogs/2023-06-06.md",
+    "'Snowglobes' & Contents.md",
+    "Devlogs/2023-06-09.md",
     "Devlogs/2023-06-07.md",
+    "'Snowglobes' & Contents.md.meta",
+    "Devlogs/2023-06-09.md.meta",
+    "Devlogs/2023-06-06.md",
+    "Devlogs/2023-06-07.md.meta",
     "Devlogs/2023-06-06.md.meta",
-    "Untitled.md",
     "Devlogs/2023-05-31.md",
     "Devlogs/2023-05-26.md",
     "Devlogs/2023-05-26.md.meta",
@@ -178,9 +181,6 @@
     "Devlogs/2023-05-23.md",
     "Devlogs/2023-05-09.md",
     "Devlogs/2023-05-24.md.meta",
-    "Devlogs/2023-05-23.md.meta",
-    "Devlogs/2023-05-22.md.meta",
-    "Devlogs/2023-05-21.md.meta",
-    "Devlogs.meta"
+    "Devlogs/2023-05-23.md.meta"
   ]
 }

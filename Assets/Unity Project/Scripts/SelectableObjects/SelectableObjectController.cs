@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using UnityEditor;
 using UnityEngine;
 
 public class SelectableObjectController : MonoBehaviour
@@ -89,6 +90,32 @@ public class SelectableObjectController : MonoBehaviour
         m_IsSelected = false;
     }
 
+    // + + + + | Gizmos | + + + + 
+
+    private void OnDrawGizmosSelected()
+    {
+        if (ObjectData == null) return;
+
+        Gizmos.color = Color.red;
+        Vector3 camOffset = GetCameraOffset();
+        Gizmos.DrawLine(transform.position, camOffset);
+        Gizmos.DrawSphere(camOffset, 0.125f);
+
+        // Frustrum
+        Camera mainCam = Camera.main;
+        if (mainCam)
+        {
+            // Draw Frustrum
+            Gizmos.color = Color.yellow;
+            Gizmos.matrix = Matrix4x4.TRS
+            (
+                camOffset, 
+                Quaternion.Euler(ObjectData.CameraRotationalOffset),
+                mainCam.transform.localScale
+                );
+            Gizmos.DrawFrustum(Vector3.zero, mainCam.fieldOfView, mainCam.farClipPlane, mainCam.nearClipPlane, mainCam.aspect);
+        }
+    }
 
 
     #endregion Methods
