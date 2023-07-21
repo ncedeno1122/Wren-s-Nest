@@ -15,5 +15,5 @@ MonoBehaviour:
   ObjectName: Wooden Cube
   ObjectDescription: A seemingly unremarkable wooden cube. Just for testing.
   ResourceURL: https://en.wikipedia.org/wiki/Llama
-  CameraPositionalOffset: {x: 0.28, y: 1.5, z: -1.49}
-  CameraRotationalOffset: {x: 78.34, y: 0, z: 0}
+  CameraPositionalOffset: {x: -0.15, y: 1.5, z: -1.49}
+  CameraRotationalOffset: {x: 40.85, y: 0, z: 0}
