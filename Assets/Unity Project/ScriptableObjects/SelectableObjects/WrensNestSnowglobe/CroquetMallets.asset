@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e08d11fe15fe54aaddcee20bb9b76e, type: 3}
+  m_Name: CroquetMallets
+  m_EditorClassIdentifier: 
+  ObjectName: Croquet Set
+  ObjectDescription: 'Though its origins are debated, there''s no doubt that people
+    from all over have enjoyed the game of Croquet.
+
+    Play a popular version of
+    Golf Croquet here!'
+  ResourceURL: https://en.wikipedia.org/wiki/Croquet
+  CameraPositionalOffset: {x: -0.67, y: 0.81, z: -3.36}
+  CameraRotationalOffset: {x: -9.73, y: -11.03, z: 0}
