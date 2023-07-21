@@ -4,11 +4,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public const float WALKSPEED = 3f;
+    public const float RUNSPEED = 6f;
 
     [SerializeField] private bool m_IsGrounded;
     [SerializeField] private Vector3 m_LookInput = Vector3.zero;
     [SerializeField] private Vector3 m_MovementInput = Vector3.zero;
-    [SerializeField] private Vector3 m_Velocity = Vector3.zero;
+    [SerializeField] private Vector3 m_Velocity = Vector3.zero; 
 
     private CharacterController m_CC;
     private PlayerInput m_PlayerInput;
@@ -36,6 +37,10 @@ public class PlayerController : MonoBehaviour
     {
         // Grounded Check
         m_IsGrounded = m_CC.isGrounded;
+        
+        // Walking or Running
+        // TODO: Awful Temp fix - change this...
+        var moveSpeed = (Input.GetKey(KeyCode.LeftShift) ? RUNSPEED : WALKSPEED);
 
         // Move & Send Camera information.
         if (m_PlayerCamera.IsPlayerControllable)
@@ -48,7 +53,7 @@ public class PlayerController : MonoBehaviour
             {
                 Vector3 transformedMovementInput = m_PlayerCamera.transform.TransformDirection(m_MovementInput);
                 transformedMovementInput[1] = 0f; // Negate vertical movement WITHOUT gravity :)
-                m_CC.Move(transformedMovementInput * (WALKSPEED * Time.deltaTime));
+                m_CC.Move(transformedMovementInput * (moveSpeed * Time.deltaTime));
             }
         }
 
