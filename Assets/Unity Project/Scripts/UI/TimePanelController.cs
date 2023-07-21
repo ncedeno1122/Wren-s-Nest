@@ -61,7 +61,7 @@ public class TimePanelController : MonoBehaviour
         m_TimeText.text = TimeManager.Instance.CurrentDT.ToString("h:mm:ss tt");
         if (ShowPercentageOfDay)
         {
-            m_TimeText.text += "\n(" + ((float)TimeManager.Instance.CurrentDT.TimeOfDay.TotalHours / 24f) * 100f + "%)";
+            m_TimeText.text += "\n(" + ((float)TimeManager.Instance.CurrentDT.AddHours(TimeManager.HourOffset).AddMinutes(TimeManager.MinuteOffset).TimeOfDay.TotalHours / 24f) * 100f + "%)";
         }
     }
 }
