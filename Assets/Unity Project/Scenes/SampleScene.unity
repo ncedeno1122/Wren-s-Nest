@@ -11433,7 +11433,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622227292}
-  m_LocalRotation: {x: 0.63162345, y: 0, z: 0, w: 0.77527535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.15, y: 2.5, z: -4.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11816,10 +11816,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8390119052531024308, guid: 6ef78f55d0ab211498b1122a5ca44852,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.243
+  m_PlayOnAwake: 0
+  m_Volume: 0
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -13204,6 +13204,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066405552}
+  - component: {fileID: 2066405554}
+  - component: {fileID: 2066405553}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -13228,6 +13230,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2066405553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066405551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92727656b037231409ecfecd019a0f3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmbientMusicBank: {fileID: 11400000, guid: d27762debed5dc34fbe98ad4fcf1c8b4, type: 2}
+  m_LastFiveTracks: []
+--- !u!114 &2066405554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066405551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634e2d2343a5e2a49b383690731e0215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmbientAudioSrc: {fileID: 0}
+  MusicAudioSrc: {fileID: 0}
+  MasterMixer: {fileID: 24100000, guid: 6ef78f55d0ab211498b1122a5ca44852, type: 2}
+  OnPlayAudio:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSwapAudioTrack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishedAudioTrack:
+    m_PersistentCalls:
+      m_Calls: []
+  AudioFadeInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2070066842
 GameObject:
   m_ObjectHideFlags: 0
