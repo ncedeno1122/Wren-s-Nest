@@ -18,8 +18,20 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Unity Project/Scripts/Managers/AudioManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Unity Project/Scripts/UI/SelectableResourceUIController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Unity Project/Scripts/UI/TimePanelController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Unity Project/Scripts/Managers/TimeManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Unity Project/Scripts/ScriptableObjects/TestLeafRecolorScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Unity Project/Scripts/Managers/AmbientAudioPlayerScript.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Unity Project/Scripts/ScriptableObjects/Audio/AmbientMusicBankSO.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="2SnvIrrxbJ7DjrQZfQOUYWMOQEU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -73,7 +85,9 @@
       <workItem from="1689928721445" duration="2095000" />
       <workItem from="1691005644031" duration="3130000" />
       <workItem from="1691099430153" duration="12627000" />
-      <workItem from="1691530538675" duration="4490000" />
+      <workItem from="1691530538675" duration="4759000" />
+      <workItem from="1695309083750" duration="1580000" />
+      <workItem from="1695853285199" duration="331000" />
     </task>
     <servers />
   </component>
