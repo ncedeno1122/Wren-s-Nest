@@ -5,32 +5,48 @@ using UnityEngine.Networking.Match;
 
 public class TestLeafRecolorScript : MonoBehaviour
 {
-    public static Color[] AutumnColors =
-    {
-        new Color(255 / 255f, 90 / 255f, 10 / 255f), // Orange
-        new Color(148 / 255f, 34 / 255f, 33 / 255f), // Maroon
-        new Color(217 / 255f, 171 / 255f, 33 / 255f) // Yellow
-    };
+    public static string[] LeafMaterialLookupNames = { "Branch", "Leaf" }; // All known Leaf material names on trees I use
 
-    public Texture RedLeavesTexture, OrangeLeavesTexture, YellowLeavesTexture;
-    public Texture[] LeafTextures;
+    public SeasonalLeafTextureSO SeasonalLeafPalette;
+    private MeshRenderer m_MeshRenderer;
+    [SerializeReference] private Material m_InstanceLeafMaterial;
 
     void Awake()
     {
-        LeafTextures = new Texture[] { RedLeavesTexture, OrangeLeavesTexture, YellowLeavesTexture };
+        m_MeshRenderer = GetComponent<MeshRenderer>();
 
-        MeshRenderer renderer = GetComponent<MeshRenderer>();
-        
-        foreach (Material mat in renderer.materials)
+        // Try and find leaf texture!
+        foreach (Material mat in m_MeshRenderer.materials)
         {
-            //Debug.Log($"Found {mat.name}");
-            if (mat.name.Contains("Branch"))
+            for (int i = 0; i < LeafMaterialLookupNames.Length; i++)
             {
-                Debug.Log("Trying to change color!");
-                //mat.color = AutumnColors[Random.Range(0, AutumnColors.Length)];
-                //mat.mainTexture = LeafTextures[Random.Range(0, LeafTextures.Length)];
-                //mat.color = Color.red;
+                if (mat.name.Contains(LeafMaterialLookupNames[i]))
+                {
+                    m_InstanceLeafMaterial = mat;
+                    break;
+                }
             }
         }
+    }
+
+    private void Start()
+    {
+        // Change Materials based on Season (if necessary)
+        if (!TimeManager.Exists) return;
+        Season currSeason = TimeManager.Instance.GetCurrentSeason();
+        switch (currSeason)
+        {
+            case Season.SPRING:
+                break;
+            case Season.SUMMER:
+                break;
+            case Season.AUTUMN:
+                m_InstanceLeafMaterial.mainTexture = SeasonalLeafPalette.AutumnLeafTextures[Random.Range(0, SeasonalLeafPalette.AutumnLeafTextures.Count)];
+                break;
+            case Season.WINTER:
+                m_InstanceLeafMaterial.color = Color.clear; // No leaves in winter :D
+                break;
+        }
+
     }
 }
