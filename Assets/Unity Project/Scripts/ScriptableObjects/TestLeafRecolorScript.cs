@@ -5,7 +5,7 @@ using UnityEngine.Networking.Match;
 
 public class TestLeafRecolorScript : MonoBehaviour
 {
-    public static string[] LeafMaterialLookupNames = { "Branch", "Leaf" }; // All known Leaf material names on trees I use
+    public static string[] LeafMaterialLookupNames = { "Branch", "Leaf", "Bush" }; // All known Leaf material names on trees I use
 
     public SeasonalLeafTextureSO SeasonalLeafPalette;
     private MeshRenderer m_MeshRenderer;
