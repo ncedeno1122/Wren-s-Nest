@@ -16,6 +16,9 @@ public class ObjectInfoUIController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI m_TitleText, m_ContentText;
 
+    // TODO: Likely a better way to do this...
+    public List<CanvasGroup> CanvasGroupsToHide;
+
     private void Awake()
     {
         m_CanvasGroup = GetComponent<CanvasGroup>();
@@ -58,6 +61,13 @@ public class ObjectInfoUIController : MonoBehaviour
         for (float t = 0f; t <= time; t += Time.deltaTime)
         {
             m_CanvasGroup.alpha = Mathf.Lerp(originalValue, targetValue, t / time);
+
+            // TODO: Bit of a hacky fix...
+            foreach (CanvasGroup cg in CanvasGroupsToHide)
+            {
+                cg.alpha = Mathf.Lerp(originalValue, targetValue, time - (t / time));
+            }
+
             yield return new WaitForEndOfFrame();
         }
         m_CanvasGroup.alpha = targetValue;
@@ -67,5 +77,23 @@ public class ObjectInfoUIController : MonoBehaviour
     {
         m_TitleText.text = selectedObject.ObjectData.ObjectName;
         m_ContentText.text = selectedObject.ObjectData.ObjectDescription;
+        if (selectedObject.ObjectData.ResourceURL.Length > 0)
+        {
+            LinkButton.interactable = true;
+            LinkButton.enabled = true;
+            LinkButton.image.color = new Color(LinkButton.image.color.r,
+                LinkButton.image.color.g,
+                LinkButton.image.color.b,
+                1f);
+        }
+        else
+        {
+            LinkButton.interactable = false;
+            LinkButton.enabled = false;
+            LinkButton.image.color = new Color(LinkButton.image.color.r,
+                LinkButton.image.color.g,
+                LinkButton.image.color.b,
+                0f);
+        }
     }
 }

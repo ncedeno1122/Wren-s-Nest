@@ -27,6 +27,10 @@ public class ScriptableCameraController : MonoBehaviour
     private ObjectInfoUIController m_ObjectInfoUI; // TODO: Set via UI Service Locater?
     public ObjectInfoUIController ObjectInfoUI { get => m_ObjectInfoUI; }
 
+    [SerializeField]
+    private VisitCodePanelController m_VisitCodePanel;
+    public VisitCodePanelController VisitCodePanel { get => m_VisitCodePanel; }
+
     private void Awake()
     {
         m_CameraSelector = GetComponent<CameraSelectionController>();
