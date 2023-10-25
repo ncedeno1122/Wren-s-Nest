@@ -8,9 +8,13 @@ public class CameraSelectionController : MonoBehaviour
     [SerializeField, Range(0.25f, 5f)]
     private float m_SelectionDistance = 1.5f;
 
+    //[SerializeField]
+    //private SelectableObjectController m_SelectedObject;
+    //public SelectableObjectController SelectedObject { get => m_SelectedObject; }
+
     [SerializeField]
-    private SelectableObjectController m_SelectedObject;
-    public SelectableObjectController SelectedObject { get => m_SelectedObject; }
+    private CamInteractableObjectController m_CamInteractableObject;
+    public CamInteractableObjectController CamInteractableObject { get => m_CamInteractableObject; }
 
     private void Awake()
     {
@@ -22,34 +26,34 @@ public class CameraSelectionController : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitObject, m_SelectionDistance, m_SelectableObjectLayer, QueryTriggerInteraction.Collide))
         {
             // Update the SelectableObject reference if null
-            if (m_SelectedObject == null)
+            if (m_CamInteractableObject == null)
             {
-                m_SelectedObject = hitObject.collider.gameObject.GetComponent<SelectableObjectController>();
-                m_SelectedObject.OnHoverEnter();
-                Debug.Log($"Didn't have a selected object, selected {m_SelectedObject.gameObject.name}!");
+                m_CamInteractableObject = hitObject.collider.gameObject.GetComponent<CamInteractableObjectController>();
+                m_CamInteractableObject.OnHoverEnter();
+                //Debug.Log($"Didn't have a CamInteractableObject, selected {hitObject.collider.gameObject.name}!");
             }
             else
             {
                 // If we DON'T know the new object, update it! 
-                if (!m_SelectedObject.gameObject.Equals(hitObject.collider.gameObject))
+                if (!hitObject.collider.gameObject.Equals(hitObject.collider.gameObject))
                 {
                     // Exit hover on old one,
-                    m_SelectedObject.OnHoverExit();
+                    m_CamInteractableObject.OnHoverExit();
 
                     // Set and ENTER hover on the new one!
-                    m_SelectedObject = hitObject.collider.gameObject.GetComponent<SelectableObjectController>();
-                    m_SelectedObject.OnHoverEnter();
+                    m_CamInteractableObject = hitObject.collider.gameObject.GetComponent<CamInteractableObjectController>();
+                    m_CamInteractableObject.OnHoverEnter();
                 }
             }
         }
         else
         {
-            // Clear the SelectableObject reference, exiting hover.
-            if (m_SelectedObject != null)
+            // Clear the CamInteractableObject reference, exiting hover.
+            if (m_CamInteractableObject != null)
             {
-                Debug.Log($"Deselected {m_SelectedObject.gameObject.name}...");
-                m_SelectedObject.OnHoverExit();
-                m_SelectedObject = null;
+                //Debug.Log($"Deselected {hitObject.collider.gameObject.name}...");
+                m_CamInteractableObject.OnHoverExit();
+                m_CamInteractableObject = null;
             }
         }
     }
@@ -61,10 +65,16 @@ public class CameraSelectionController : MonoBehaviour
     /// </summary>
     /// <param name="selectedObject"></param>
     /// <returns></returns>
-    public bool TrySelectObject(out SelectableObjectController selectedObject)
+    //public bool TrySelectObject(out SelectableObjectController selectedObject)
+    //{
+    //    selectedObject = (m_CamInteractableObject is SelectableObjectController) ? m_CamInteractableObject as SelectableObjectController : null;
+    //    return m_CamInteractableObject != null;
+    //}
+
+    public bool TryGetCamInteractableObject(out CamInteractableObjectController camInteractable)
     {
-        selectedObject = m_SelectedObject;
-        return m_SelectedObject != null;
+        camInteractable = m_CamInteractableObject;
+        return m_CamInteractableObject != null;
     }
 
     private void OnDrawGizmos()

@@ -30,15 +30,22 @@ public class CameraPlayerState : CameraState
 
     public override void HandleSelectInput()
     {
-        // Switch state to SelectionState!
-        if (m_Context.CameraSelector.TrySelectObject(out SelectableObjectController selectedObject))
+        if (m_Context.CameraSelector.TryGetCamInteractableObject(out CamInteractableObjectController camInteractableObject))
         {
-            Debug.Log($"WE GOT ONE IT\'S {selectedObject.gameObject.name}!!");
+            //Debug.Log($"Found {camInteractableObject.name}!");
 
-            // Switch state to LerpToObjectState!
-            m_Context.ChangeState(new CameraLerpToObjectState(m_Context, m_Context.CameraSelector.SelectedObject));
+            // Handle SelectableObject
+            if (camInteractableObject is SelectableObjectController selectableObject)
+            {
+                //Debug.Log($"WE GOT ONE IT\'s {selectableObject.gameObject.name}!");
+                m_Context.ChangeState(new CameraLerpToObjectState(m_Context, selectableObject));
+            }
+            // Otherwise, just handle the object interaction
+            else
+            {
+                camInteractableObject.OnInteract(); // But SelectableObjects might need to interact too, bruto...
+            }
         }
-        //m_Context.ChangeState(new CameraSelectionState(m_Context));
     }
 
     protected override void PreUpdate()
