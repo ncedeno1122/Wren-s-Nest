@@ -4,52 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "291a673cc2b00d86",
+        "id": "a861e47daa5c749d",
         "type": "tabs",
         "children": [
           {
-            "id": "12e22bd62f58eb24",
+            "id": "df6b4ae3ce3ad949",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Devlogs/2023-10-25.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           },
           {
-            "id": "9f05ef7d79bdca75",
+            "id": "8ee6410b02e1f971",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "'Snowglobes' & Contents.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
-      },
-      {
-        "id": "feaa848c6d087e2e",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "2cff3e51bf6a66f9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Devlogs/2023-10-09.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -115,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Devlogs/2023-10-25.md",
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Devlogs/2023-10-25.md",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Devlogs/2023-10-25.md"
+                "file": "Untitled.md"
               }
             }
           }
@@ -177,16 +156,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "12e22bd62f58eb24",
+  "active": "8ee6410b02e1f971",
   "lastOpenFiles": [
-    "Devlogs/2023-10-25.md.meta",
+    "Untitled.md",
     "Devlogs/2023-10-09.md",
+    "'Snowglobes' & Contents.md",
     "Devlogs/2023-10-25.md",
+    "Devlogs/2023-10-25.md.meta",
     "Untitled.canvas",
     "Devlogs/2023-10-17 & 19.md",
     "Devlogs/2023-10-17 & 19.md.meta",
     "Devlogs/2023-10-17.md.meta",
-    "'Snowglobes' & Contents.md",
     "Devlogs/2023-10-16.md.meta",
     "2023-10-16.md.meta",
     "Devlogs/2023-06-09.md",
@@ -199,7 +179,6 @@
     "Devlogs/2023-05-31.md",
     "Devlogs/2023-05-26.md",
     "Devlogs/2023-05-26.md.meta",
-    "Devlogs/2023-05-31.md.meta",
     "Devlogs/2023-05-25.md",
     "Devlogs/2023-05-24.md",
     "Devlogs/2023-05-21.md",

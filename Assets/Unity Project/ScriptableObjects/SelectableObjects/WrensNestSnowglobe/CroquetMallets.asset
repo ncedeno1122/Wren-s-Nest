@@ -18,6 +18,6 @@ MonoBehaviour:
 
     Play a popular version of
     Golf Croquet here!'
-  ResourceURL: https://en.wikipedia.org/wiki/Croquet
+  ResourceURL: https://peachtea-music.itch.io/minicroquetdemo
   CameraPositionalOffset: {x: -0.67, y: 0.81, z: -3.36}
   CameraRotationalOffset: {x: -9.73, y: -11.03, z: 0}

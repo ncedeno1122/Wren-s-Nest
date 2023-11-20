@@ -135,9 +135,9 @@ public class TimeManager : GenericSingleton<TimeManager>
                 return Season.SPRING;
             case >= 6 and < 8:
                 return Season.SUMMER;
-            case >= 8 and < 11:
+            case >= 8 and <= 11:
                 return Season.AUTUMN;
-            case >= 11 or >= 1:
+            case > 11 or >= 1:
                 return Season.WINTER;
             default:
                 Debug.LogWarning("Couldn't get proper season?");

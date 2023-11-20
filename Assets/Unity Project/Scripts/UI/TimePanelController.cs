@@ -58,7 +58,7 @@ public class TimePanelController : MonoBehaviour
 
     private void OnTimeManagerTick()
     {
-        m_TimeText.text = TimeManager.Instance.CurrentDT.ToString("h:mm:ss tt") + TimeManager.Instance.GetCurrentSeason();
+        m_TimeText.text = TimeManager.Instance.CurrentDT.ToString("h:mm:ss tt") + "\n(" + TimeManager.Instance.GetCurrentSeason() + ")";
         if (ShowPercentageOfDay)
         {
             m_TimeText.text += "\n(" + ((float)TimeManager.Instance.CurrentDT.AddHours(TimeManager.HourOffset).AddMinutes(TimeManager.MinuteOffset).TimeOfDay.TotalHours / 24f) * 100f + "%)";
