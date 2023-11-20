@@ -11,12 +11,13 @@ public class VisitCodePanelController : MonoBehaviour
     public TMP_InputField m_InputField;
     public TextMeshProUGUI SubmitResultText;
 
-    public UnityEvent<int> OnValidVisitCodeSubmitted = new();
+    public static UnityEvent<int> OnValidVisitCodeSubmitted = new();
 
     // TODO: Move this Dictionary somewhere else!
     public Dictionary<string, int> VisitCodeDictionary = new Dictionary<string, int>()
     {
-        { "1909", 101 }
+        { "1909", 101 },
+        { "1800", 102 }
     };
 
     private void Awake()
@@ -61,7 +62,7 @@ public class VisitCodePanelController : MonoBehaviour
         if (m_InputField.text.Length == 4)
         {
             // Lookup Code to be Recognized
-            if (VisitCodeDictionary.ContainsKey(m_InputField.text))
+            if (VisitCodeDictionary.ContainsKey(m_InputField.text) || true) // TODO: Just close the window on submit, not this hack.
             {
                 int eventKey = VisitCodeDictionary[m_InputField.text];
 

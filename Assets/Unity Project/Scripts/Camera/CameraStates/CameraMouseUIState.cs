@@ -11,7 +11,7 @@ public class CameraMouseUIState : CameraState
     public override void OnEnter()
     {
         m_Context.VisitCodePanel.Show();
-        m_Context.VisitCodePanel.OnValidVisitCodeSubmitted.AddListener(HandleValidCodeSubmitted);
+        VisitCodePanelController.OnValidVisitCodeSubmitted.AddListener(HandleValidCodeSubmitted);
 
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -19,7 +19,7 @@ public class CameraMouseUIState : CameraState
     public override void OnExit()
     {
         m_Context.VisitCodePanel.Hide();
-        m_Context.VisitCodePanel.OnValidVisitCodeSubmitted.RemoveListener(HandleValidCodeSubmitted);
+        VisitCodePanelController.OnValidVisitCodeSubmitted.RemoveListener(HandleValidCodeSubmitted);
     }
 
     protected override void PreUpdate()
