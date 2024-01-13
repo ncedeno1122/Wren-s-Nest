@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking.Match;
 
 public class TestLeafRecolorScript : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class TestLeafRecolorScript : MonoBehaviour
     private MeshRenderer m_MeshRenderer;
     [SerializeReference] private Material m_InstanceLeafMaterial;
 
-    void Awake()
+    private void Awake()
     {
         m_MeshRenderer = GetComponent<MeshRenderer>();
 
@@ -38,15 +37,17 @@ public class TestLeafRecolorScript : MonoBehaviour
         {
             case Season.SPRING:
                 break;
+
             case Season.SUMMER:
                 break;
+
             case Season.AUTUMN:
                 m_InstanceLeafMaterial.mainTexture = SeasonalLeafPalette.AutumnLeafTextures[Random.Range(0, SeasonalLeafPalette.AutumnLeafTextures.Count)];
                 break;
+
             case Season.WINTER:
                 m_InstanceLeafMaterial.color = Color.clear; // No leaves in winter :D
                 break;
         }
-
     }
 }
