@@ -9,14 +9,7 @@ public class BillBoardOnVisible : MonoBehaviour
 {
     private bool m_IsVisible = false;
 
-    private SpriteRenderer m_Renderer;
-
     private Camera m_MainCamera;
-
-    private void Awake()
-    {
-        m_Renderer = GetComponent<SpriteRenderer>();
-    }
 
     private void Start()
     {

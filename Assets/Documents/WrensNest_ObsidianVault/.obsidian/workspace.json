@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "Devlogs/2024-01-17.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "Devlogs/2024-01-17.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
+                "file": "Devlogs/2024-01-17.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "Devlogs/2024-01-17.md"
               }
             }
           }
@@ -158,13 +158,16 @@
   },
   "active": "8ee6410b02e1f971",
   "lastOpenFiles": [
+    "Devlogs/2024-01-17.md.meta",
     "Untitled.md",
+    "Devlogs/2024-01-17.md",
+    "Devlogs/2023-05-26.md",
+    "Devlogs/2023-10-17 & 19.md",
     "Devlogs/2023-10-09.md",
     "'Snowglobes' & Contents.md",
     "Devlogs/2023-10-25.md",
     "Devlogs/2023-10-25.md.meta",
     "Untitled.canvas",
-    "Devlogs/2023-10-17 & 19.md",
     "Devlogs/2023-10-17 & 19.md.meta",
     "Devlogs/2023-10-17.md.meta",
     "Devlogs/2023-10-16.md.meta",
@@ -177,7 +180,6 @@
     "Devlogs/2023-06-07.md.meta",
     "Devlogs/2023-06-06.md.meta",
     "Devlogs/2023-05-31.md",
-    "Devlogs/2023-05-26.md",
     "Devlogs/2023-05-26.md.meta",
     "Devlogs/2023-05-25.md",
     "Devlogs/2023-05-24.md",
