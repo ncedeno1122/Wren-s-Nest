@@ -2649,6 +2649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502aefba29412d245ad2539e4f9279dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletinEventsToPrint: 8
+  BulletinText: {fileID: 1656499736}
 --- !u!1 &359677632
 GameObject:
   m_ObjectHideFlags: 0
@@ -21863,9 +21865,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Events today:
+  m_text: '[EVENT: Test Event 61, 1/20/2024 @ 2391]
 
-    - Nemours Demo Day @ 2pm'
+    [EVENT: Test Event 89, 1/24/2024
+    @ 2144]
+
+    [EVENT: Test Event 8, 2/20/2024 @ 1832]
+
+    [EVENT: Test Event
+    156, 3/27/2024 @ 2071]
+
+    [EVENT: Test Event 93, 3/27/2024 @ 2134]
+
+    [EVENT:
+    Test Event 160, 4/30/2024 @ 2061]
+
+    [EVENT: Test Event 67, 5/24/2024 @ 1936]
+
+    [EVENT:
+    Test Event 134, 5/28/2024 @ 2062]
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2356ce7ab8666f74b99db7f90662d9ae, type: 2}
   m_sharedMaterial: {fileID: -1487482778211679593, guid: 2356ce7ab8666f74b99db7f90662d9ae,
@@ -21893,10 +21913,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 18.25
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -21909,7 +21929,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}

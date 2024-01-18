@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Devlogs/2024-01-17.md",
+                "file": "Devlogs/2024-01-18.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Devlogs/2024-01-17.md",
+                "file": "Devlogs/2024-01-18.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Devlogs/2024-01-17.md",
+                "file": "Devlogs/2024-01-18.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Devlogs/2024-01-17.md"
+                "file": "Devlogs/2024-01-18.md"
               }
             }
           }
@@ -158,9 +158,11 @@
   },
   "active": "8ee6410b02e1f971",
   "lastOpenFiles": [
+    "Devlogs/2024-01-18.md.meta",
+    "Devlogs/2024-01-17.md",
+    "Devlogs/2024-01-18.md",
     "Devlogs/2024-01-17.md.meta",
     "Untitled.md",
-    "Devlogs/2024-01-17.md",
     "Devlogs/2023-05-26.md",
     "Devlogs/2023-10-17 & 19.md",
     "Devlogs/2023-10-09.md",
@@ -180,7 +182,6 @@
     "Devlogs/2023-06-07.md.meta",
     "Devlogs/2023-06-06.md.meta",
     "Devlogs/2023-05-31.md",
-    "Devlogs/2023-05-26.md.meta",
     "Devlogs/2023-05-25.md",
     "Devlogs/2023-05-24.md",
     "Devlogs/2023-05-21.md",

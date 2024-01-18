@@ -3,34 +3,49 @@ using TMPro;
 using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Linq;
 
 public class BulletinController : MonoBehaviour
 {
-    private TextMeshProUGUI m_BulletinText;
+    [Range(0, 10)]
+    public int BulletinEventsToPrint = 5;
+
+    private List<BulletinEvent> m_CachedBulletinEvents = new();
+
+    public TMP_Text BulletinText;
 
     //
 
     private void Awake()
     {
-        m_BulletinText = GetComponentInChildren<TextMeshProUGUI>();
+        // Get & Initialize BulletinText
+        BulletinText = GetComponentInChildren<TMP_Text>();
+        BulletinText.text = String.Empty;
 
-        //Debug.Log(JsonUtility.ToJson(new BulletinEvent() { name = "SideshowEvent", month = 1, day = 4, year = 2024, time = 0258 }));
-
-        // Try find the thing...
+        // Try find the JSON paths...
         string path = Application.dataPath + "/Documents/TestBulletinEvents.json";
+        string path2 = Application.dataPath + "/Documents/TestBulletinEventsAdditional.json";
+
+        // Populate List of ALL processed JSON Strings, per path
         List<string> jsonStringList = GetJSONStringListFrom(path);
-        List<BulletinEvent> bulletinEvents = new();
+        jsonStringList.AddRange(GetJSONStringListFrom(path2));
 
-        foreach (string jsonString in jsonStringList)
-        {
-            //Debug.Log(jsonString);
-            bulletinEvents.Add(BulletinEvent.CreateFromJSON(jsonString));
-        }
+        // Populate Bulletin
+        PopulateBulletinEventList(jsonStringList);
 
-        foreach (BulletinEvent be in bulletinEvents) Debug.Log(be);
+        // Filter List for Recent Events
+        DisplayFilteredBulletinEvents();
+
+        //foreach (BulletinEvent be in bulletinEvents) Debug.Log(be);
     }
 
     //
+
+    [ContextMenu("Awake")]
+    public void TestAwakeWrapper()
+    {
+        Awake();
+    }
 
     // + + + + | Functions | + + + +
 
@@ -84,13 +99,43 @@ public class BulletinController : MonoBehaviour
 
         return jsonBlocks;
     }
+
+    private void PopulateBulletinEventList(List<string> jsonStringList)
+    {
+        // Populate List of ALL BulletinEvents
+        foreach (string jsonString in jsonStringList)
+        {
+            m_CachedBulletinEvents.Add(BulletinEvent.CreateFromJSON(jsonString));
+        }
+    }
+
+    private void DisplayFilteredBulletinEvents()
+    {
+        DateTime currDT = DateTime.Now;
+        List<BulletinEvent> filteredEvents = m_CachedBulletinEvents.Where(
+            be => be.year >= currDT.Year &&
+            be.month >= currDT.Month &&
+            be.day >= currDT.Day &&
+            be.time >= ((currDT.Hour * 100) + currDT.Minute)
+        ).ToList<BulletinEvent>();
+        filteredEvents.Sort();
+
+        // Print first few Filtered List BulletinEvents to BulletinText
+        for (int i = 0; i < BulletinEventsToPrint; i++)
+        {
+            if (i < filteredEvents.Count)
+            {
+                BulletinText.text += filteredEvents[i].ToString() + "\n";
+            }
+        }
+    }
 }
 
 /// <summary>
 /// Represents a singular event's data on the Bulletin Board.
 /// </summary>
 [Serializable]
-public class BulletinEvent
+public class BulletinEvent : IComparable
 {
     public string name;
     public int month;
@@ -101,6 +146,46 @@ public class BulletinEvent
     public override string ToString()
     {
         return $"[EVENT: {name}, {month}/{day}/{year} @ {time}]";
+    }
+
+    public int CompareTo(object obj)
+    {
+        if (obj == null) return 1;
+        if (obj is BulletinEvent be)
+        {
+            return CompareTo(be);
+        }
+        else return 0;
+    }
+
+    /// <summary>
+    /// Compares two BulletinEvents by their years, months, dates, then time.
+    /// The one that is greater happens later, unless they occur at the exact same time.
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    public int CompareTo(BulletinEvent other)
+    {
+        if (other == null) return 1;
+
+        // Year
+        if (this.year == other.year)
+        {
+            // Month
+            if (this.month == other.month)
+            {
+                // Day
+                if (this.day == other.day)
+                {
+                    // Time
+                    if (this.time == other.time) return 0;
+                    else return this.time.CompareTo(other.time);
+                }
+                else return this.day.CompareTo(other.day);
+            }
+            else return this.month.CompareTo(other.month);
+        }
+        else return this.year.CompareTo(other.year);
     }
 
     public static BulletinEvent CreateFromJSON(string jsonString)
